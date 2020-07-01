@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="size:50%;">
+  <div class="container-fluid" >
+    <div class="navbar-header " style="margin: 1%;">
+      <a class="navbar-brand" href="#">Grasp it up</a>
+    </div>
+    <form class="navbar-form navbar-left" >
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+      </div>
+      <button type="submit" class="btn btn-default "style="color:black">Submit</button>
+    </form>
+    <ul class="nav navbar-nav" style="color:white ">
+      <li class="active"><a href="#" style="color:white; flex-wrap: wrap;">Home</a></li>
+      <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>
+
+    </ul>
+    
+  </div><br><br><br>
+</nav>
+<div class="container" style="padding: 2%; flex-wrap: wrap;flex-direction: column;width: 50%;"
+>
+  <h2>User Login</h2>
+  <form #loginform="ngForm" (ngSubmit)="loginUser()">
+   <small class="text-danger">{{msg}}</small>
+  
+  
+   <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" name="email" placeholder="Please Enter email" [(ngModel)]="user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+      #email="ngModel" 
+      [class.is-invalid]="email.invalid && email.touched"
+      >
+      <!--<small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>-->
+      <div *ngIf="email.errors && email.invalid && email.touched">
+        <small class="text-danger" *ngIf="email.errors.required ">Email is required</small>
+        <small class="text-danger" *ngIf="email.errors.pattern">invalid email</small>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" name="password" placeholder="Please Enter password" [(ngModel)]="user.password" required #password="ngModel"
+      
+      [class.is-invalid]="password.invalid && password.touched"
+      >
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required</small>
+    
+  </div>
+    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info">Login</button>
+  </form></div>
+  <!--<small class="float-right" (click)="gotoregistration()">New user? register</small>-->
+  
