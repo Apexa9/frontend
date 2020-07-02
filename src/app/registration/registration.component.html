@@ -111,7 +111,7 @@
             <small class="text-danger" [class.d-none]="cpassword.value == password.value || cpassword.untouched">Password does not match</small>
           </div>
             
-          <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+          <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button><a  [routerLink]="['/login']" class="btn btn-link" style="color:cornflowerblue ">Login</a>
           
         
 </form>

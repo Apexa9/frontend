@@ -21,7 +21,8 @@ msg='';
 this._service.loginUserFromRemote(this.user).subscribe(
   data => {
     console.log("respone recieved");
-    this._router.navigate(['/loginsuccess'])
+    this.msg="Successful registration"
+    //this._router.navigate(['/loginsuccess'])
   },
     error => {
       console.log("exception");
