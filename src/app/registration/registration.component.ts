@@ -21,7 +21,8 @@ registerUser()
     data=>{
       console.log("response received");
     this.msg="success";
-      this._router.navigate(['/login'])
+    
+     // this._router.navigate(['/login'])
 
    this.msg="Registration Successful";
     },
