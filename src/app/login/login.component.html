@@ -1,34 +1,68 @@
+<!doctype html>
 <html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Grasp it up</title>
+
+	<!-- Bootstrap CSS and Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" media="all">
+
+	
+	<link rel="icon" href="assets/images/fav-icon.png">
 </head>
+
 <body>
+	<div class="page-wrapper">
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="size:50%;">
-  <div class="container-fluid" >
-    <div class="navbar-header " style="margin: 1%;">
-      <a class="navbar-brand" href="#">Grasp it up</a>
-    </div>
-    <form class="navbar-form navbar-left" >
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+		<!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block" >
+			<div class="logo"style="background-color: #232324; box-shadow: #232324;">
+				<a href="home.html">
+					<img src="..\assets\logograsp.png" alt="Graspitup" class="img-responsive" style="background: #232324; box-shadow: #232324;margin-right: auto;">
+				</a>
       </div>
-      <button type="submit" class="btn btn-default "style="color:black">Submit</button>
-    </form>
-    <ul class="nav navbar-nav" style="color:white ">
-      <li class="active"><a href="#" style="color:white; flex-wrap: wrap;">Home</a></li>
-      <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>
-
-    </ul>
-    
-  </div><br><br><br>
-</nav>
-<div class="container" style="padding: 2%; flex-wrap: wrap;flex-direction: column;width: 50%;"
+      <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop" style="background-color: #232324; box-shadow: #232324; margin-left: auto;">
+          <div class="section-content section-content-p30">
+            <div class="container-fluid">
+              <div class="header-wrap">
+                <form class="form-header" onsubmit="return false;" method="GET">
+                  <input class="au-input au-input-xl" type="text" name="search"
+                    placeholder="Search for data ..." />
+                  <button class="au-btn-submit" style="background-color:white; color:black" type="submit">
+                    Search
+                  </button>
+                </form>
+                <div class="cart-area d-n">
+                  <nav class="navbar navbar-expand-md " style="size:50%;">
+                  <ul class="nav navbar-nav" style="color:white ">
+                    
+                    <li><a [routerLink]="['/']" class="btn btn-link" style="color:white ">Home</a></li>
+                    <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>
+                  </ul>
+                </nav>
+                <!--	<a href="shopping-detail.html">
+                    <div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart"
+                      aria-hidden="true"></i>
+                  </a>-->
+                </div>
+              </div>
+              <div class="account-wrap"></div>
+            </div>
+          </div>
+        </header>
+      </div>
+      </aside>
+      </div>
+      </body>
+<div class="container" style="padding-top: 5%; flex-wrap: wrap;flex-direction: column;width: 50%;"
 >
   <h2>User Login</h2>
   <form #loginform="ngForm" (ngSubmit)="loginUser()">
@@ -57,7 +91,10 @@
       <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required</small>
     
   </div>
-    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-dark">Login</button>
-  </form></div>
+
+    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-dark btn-space" >Login as learner</button>  
+    <button  type="submit"[routerLink]="['/facilitator']" class="btn btn-dark btn-space">Login as facilitator</button>
+  </form>
+</div>
   <!--<small class="float-right" (click)="gotoregistration()">New user? register</small>-->
   
