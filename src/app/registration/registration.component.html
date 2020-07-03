@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="navbar-header" style="margin: 1%;">
+      <a class="navbar-brand" href="#" style="float:left; font-size:20px">Grasp It Up</a>
+    </div>
+    <form class="navbar-form navbar-left" >
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#" style="color: white;">Home</a></li>
+    </ul>
+    
+  </div>
+</nav>
+</body>
+</html>    
+<div class="container"  style=" flex-wrap: wrap;flex-direction: column;width: 50%;"
+>
+<!--<div class="container" style="width:30%;margin-top: 6%;">-->
+<h2>Registration form</h2>
+<form #Registerform="ngForm" (ngSubmit)="registerUser()"  >
+  <small class="text-danger" style="font-size: 16px;">{{msg}}</small>
+    <div class="form-group">
+<!--<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+</div>-->
+      <label for="email">Email:</label>
+    <input type="email" class="form-control" placeholder="Enter email address" name="email" required [(ngModel)]="user.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+    #email="ngModel"
+    [class.is-invalid]="email.invalid && email.touched">
+    <div *ngIf="email.errors && email.invalid && email.touched">
+        <small class="text-danger" *ngIf="email.errors.required ">Email is required</small>
+        <small class="text-danger" *ngIf="email.errors.pattern">Invalid email address</small>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" placeholder="Enter First name" name="firstname" required [(ngModel)]="user.first_name" 
+      #firstname="ngModel"
+      [class.is-invalid]="firstname.invalid && firstname.touched">
+      <div *ngIf="firstname.errors && firstname.invalid && firstname.touched">
+          <small class="text-danger" *ngIf="firstname.errors.required ">firstname is required</small>
+      
+  
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last name</label>
+        <input type="text" class="form-control" placeholder="Enter lastname" name="lastname" required [(ngModel)]="user.last_name" 
+        #lastname="ngModel"
+        [class.is-invalid]="lastname.invalid && lastname.touched">
+        <div *ngIf="lastname.errors && lastname.invalid && lastname.touched">
+            <small class="text-danger" *ngIf="lastname.errors.required ">lastname is required</small>
+        
+    
+          </div>
+        </div>
+      
+    
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" placeholder="Enter Username" name="username" required [(ngModel)]="user.username" 
+        #username="ngModel"
+        [class.is-invalid]="username.invalid && username.touched">
+        <div *ngIf="username.errors && username.invalid && username.touched">
+            <small class="text-danger" *ngIf="username.errors.required ">Username is required</small>
+        
+    
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">password:</label>
+          <input type="password" class="form-control" name="password" placeholder="Please Enter password" [(ngModel)]="user.password" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" 
+          #password="ngModel" 
+          [class.is-invalid]="password.invalid && password.touched"
+          >
+          <!--<small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>-->
+          <div *ngIf="password.errors && password.invalid && password.touched">
+            <small class="text-danger" *ngIf="password.errors.required ">password is required</small>
+            <small class="text-danger" *ngIf="password.errors.pattern">Password must include-1. At least one upper case English letter
+              <br>2.At least one lower case English letter
+              <br>3.At least one digit
+              <br>4.At least one special character
+              <br>5.Minimum eight in length</small>
+            
+    
+          </div>
+        </div>
+          <div class="form-group">
+            <label for="pwd">Confirm Password:</label>
+            <input type="password" class="form-control" name="cpassword" placeholder="Re-enter password" (ngModel)="user.password" #cpassword="ngModel"
+            
+            [class.is-invalid]="cpassword.invalid && cpassword.touched"
+            >
+            <small class="text-danger" [class.d-none]="cpassword.value == password.value || cpassword.untouched">Password does not match</small>
+          </div>
+            ss
+          <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-dark">Register</button>
+          
+        
+</form>
+<!--<small style="font-size:16px; cursor:pointer;text-decoration:underline;color:cornflowerblue " class="float-right btextual" [routerLink]="['/login']">Already have an account? LOGIN</small>
+-->
+</div>
