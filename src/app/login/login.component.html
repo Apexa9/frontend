@@ -65,7 +65,7 @@
 <div class="container" style="padding-top: 5%; flex-wrap: wrap;flex-direction: column;width: 50%;"
 >
   <h2>User Login</h2>
-  <form #loginform="ngForm" (ngSubmit)="loginUser()" (ngSubmit)="loginfacilitator()">
+  <form #loginform="ngForm" (ngSubmit)="onsubmit()" >
    <small class="text-danger">{{msg}}</small>
   
   
@@ -92,8 +92,8 @@
     
   </div>
 
-    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-dark btn-space" >Login as learner</button>  
-    <button  [disabled]="loginform.form.invalid" type="submit"class="btn btn-dark btn-space">Login as facilitator</button>
+    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-dark btn-space" (click)="loginUser()" >Login as learner</button>  
+    <button  [disabled]="loginform.form.invalid" type="submit"class="btn btn-dark btn-space"(click)="loginfacilitator()">Login as facilitator</button>
   </form>
 </div>
   <!--<small class="float-right" (click)="gotoregistration()">New user? register</small>-->

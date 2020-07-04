@@ -11,45 +11,57 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 user =new User();
 msg='';
+clicked=false;
   constructor(private _service : RegisterService,private _router : Router) { }
 
   ngOnInit(){
   }
+  onsubmit()
+  {
+    if(this.clicked==true)
+    {
+      this._service.loginUserFromRemote(this.user).subscribe(
+        data => {
+          localStorage.setItem('loggedInUser',this.user.email);
+          console.log("respone recieved");
+          this.msg="Successful registration"
+          this._router.navigate(['/myhomepage'])
+      
+        },
+          error => {
+            console.log("exception");
+            this.msg="Wrong credentials";
+          }
+      )
+      
+    }
+    else{
+      this.clicked=false;
+      this._service.loginUserFromRemote(this.user).subscribe(
+        data => {
+          localStorage.setItem('loggedInUser',this.user.email);
+          console.log("respone recieved");
+          this.msg="Successful registration"
+          this._router.navigate(['/facilitator'])
+      
+        },
+          error => {
+            console.log("exception");
+            this.msg="Wrong credentials";
+          }
+      )
+            
+    }
+  }
   
   loginUser()
   {
-this._service.loginUserFromRemote(this.user).subscribe(
-  data => {
-    localStorage.setItem('loggedInUser',this.user.email);
-    console.log("respone recieved");
-    this.msg="Successful registration"
-    this._router.navigate(['/myhomepage'])
-
-  },
-    error => {
-      console.log("exception");
-      this.msg="Wrong credentials";
-    }
-)
+    this.clicked=true;
 
 }
 loginfacilitator()
 {
-  
-this._service.loginUserFromRemote(this.user).subscribe(
-  data => {
-    localStorage.setItem('loggedInUser',this.user.email);
-    console.log("respone recieved");
-    this.msg="Successful registration"
-    this._router.navigate(['/facilitator'])
-
-  },
-    error => {
-      console.log("exception");
-      this.msg="Wrong credentials";
-    }
-)
-
+this.clicked=false;
 }
 gotoregistration()
 { 
