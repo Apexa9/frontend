@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-myhomepage',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyhomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _authservice:RegisterService) { }
 
   ngOnInit(): void {
   }

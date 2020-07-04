@@ -30,7 +30,7 @@
         </form>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#" style="color:white ">Home</a></li>
-          <li><a [routerLink]="['/login']" class="btn btn-link" style="color:white ">logout</a></li>
+          <li><a  class="btn btn-link" style="color:white " (click)="_authservice.logOutUser()" *ngIf="_authservice.loggedIn()">logout</a></li>
     
         </ul>
         

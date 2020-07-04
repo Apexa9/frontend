@@ -9,15 +9,16 @@ import { ContactComponent } from './contact/contact.component';
 import { FacilitatorComponent } from './facilitator/facilitator.component';
 import { CreatecourseComponent } from './createcourse/createcourse.component';
 import { MyhomepageComponent } from './myhomepage/myhomepage.component';
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'loginsuccess',component:LoginsuccessComponent},
+  {path:'loginsuccess',canActivate:[AuthGuard],component:LoginsuccessComponent},
   {path:'registration',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
   {path:'contact',component:ContactComponent},
   {path:'facilitator',component:FacilitatorComponent},
   {path:'createcourse',component:CreatecourseComponent},
-  {path:'myhomepage',component:MyhomepageComponent},
+  {path:'myhomepage',canActivate:[AuthGuard],component:MyhomepageComponent},
 
 ];
 

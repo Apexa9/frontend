@@ -44,8 +44,9 @@
                   <nav class="navbar navbar-expand-md " style="size:50%;">
                   <ul class="nav navbar-nav" style="color:white ">
                     
-                    <li><a [routerLink]="['/']" class="btn btn-link" style="color:white ">Learner</a></li>
-                   <!-- <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>-->
+                    <li><a [routerLink]="['/loginsuccess']" class="btn btn-link" style="color:white ">Learner</a></li>
+                    <!--<li><a  class="btn btn-link" style="color:white " (click)="_authservice.logOutUser()" *ngIf="_authservice.loggedIn()">logout</a></li>-->
+                    <!-- <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>-->
                   </ul>
                 </nav>
                 <!--	<a href="shopping-detail.html">

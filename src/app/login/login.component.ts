@@ -20,8 +20,29 @@ msg='';
   {
 this._service.loginUserFromRemote(this.user).subscribe(
   data => {
+    localStorage.setItem('loggedInUser',this.user.email);
     console.log("respone recieved");
-    this._router.navigate(['/loginsuccess'])
+    this.msg="Successful registration"
+    this._router.navigate(['/myhomepage'])
+
+  },
+    error => {
+      console.log("exception");
+      this.msg="Wrong credentials";
+    }
+)
+
+}
+loginfacilitator()
+{
+  
+this._service.loginUserFromRemote(this.user).subscribe(
+  data => {
+    localStorage.setItem('loggedInUser',this.user.email);
+    console.log("respone recieved");
+    this.msg="Successful registration"
+    this._router.navigate(['/facilitator'])
+
   },
     error => {
       console.log("exception");
