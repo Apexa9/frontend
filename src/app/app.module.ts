@@ -25,7 +25,7 @@ import { MyhomepageComponent } from './myhomepage/myhomepage.component';
     AboutComponent,
     ContactComponent,
     FacilitatorComponent,
-    CreatecourseComponent
+    CreatecourseComponent,
     MyhomepageComponent
   ],
   imports: [
