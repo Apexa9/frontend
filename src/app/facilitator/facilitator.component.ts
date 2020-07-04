@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-facilitator',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacilitatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _authservice:RegisterService) { }
 
   ngOnInit(): void {
   }

@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'registration',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
   {path:'contact',component:ContactComponent},
-  {path:'facilitator',component:FacilitatorComponent},
+  {path:'facilitator',canActivate:[AuthGuard],component:FacilitatorComponent},
   {path:'createcourse',component:CreatecourseComponent},
   {path:'myhomepage',canActivate:[AuthGuard],component:MyhomepageComponent},
 
