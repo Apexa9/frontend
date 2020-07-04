@@ -21,14 +21,14 @@ msg='';
 this._service.loginUserFromRemote(this.user).subscribe(
   data => {
     console.log("respone recieved");
-    this.msg="Successful registration"
-    //this._router.navigate(['/loginsuccess'])
+    this._router.navigate(['/loginsuccess'])
   },
     error => {
       console.log("exception");
       this.msg="Wrong credentials";
     }
 )
+
 }
 gotoregistration()
 { 

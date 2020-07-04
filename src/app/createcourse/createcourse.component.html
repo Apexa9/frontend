@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Grasp it up</title>
+
+	<!-- Bootstrap CSS and Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" media="all">
+
+	
+	<link rel="icon" href="assets/images/fav-icon.png">
+</head>
+
+<body>
+	<div class="page-wrapper">
+
+		<!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block" >
+			<div class="logo"style="background-color: #232324; box-shadow: #232324;">
+				<a href="home.html">
+					<img src="..\assets\logograsp.png" alt="Graspitup" class="img-responsive" style="background: #232324; box-shadow: #232324;margin-right: auto;">
+				</a>
+      </div>
+      <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop" style="background-color: #232324; box-shadow: #232324; margin-left: auto;">
+          <div class="section-content section-content-p30">
+            <div class="container-fluid">
+              <div class="header-wrap">
+                <form class="form-header" onsubmit="return false;" method="GET">
+                  <input class="au-input au-input-xl" type="text" name="search"
+                    placeholder="Search for data ..." />
+                  <button class="au-btn-submit" style="background-color:white; color:black" type="submit">
+                    Search
+                  </button>
+                </form>
+                <div class="cart-area d-n">
+                  <nav class="navbar navbar-expand-md " style="size:50%;">
+                  <ul class="nav navbar-nav" style="color:white ">
+                    
+                    <!--<li><a [routerLink]="['/']" class="btn btn-link" style="color:white "></a></li>
+                    <li><a [routerLink]="['/login']" class="btn btn-link" style="color:white "></a></li>-->
+                  </ul>
+                </nav>
+                <!--	<a href="shopping-detail.html">
+                    <div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart"
+                      aria-hidden="true"></i>
+                  </a>-->
+                </div>
+              </div>
+              <div class="account-wrap"></div>
+            </div>
+          </div>
+        </header>
+      </div>
+      </aside>
+      </div>
+      </body>  
+<div class="container" style="padding-top: 90px; padding-left: 100px;">
+    <h3>Create Course</h3><br>
+    <form #courseform="ngForm" (ngSubmit)="registerCourse()"  >
+                <small class="text-danger" style="font-size: 20px;">{{msg}}</small>
+    <br><br>
+    <div class="form-group">
+      <!--<div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Success!</strong> This alert box could indicate a successful or positive action.
+      </div>-->
+            <label for="coursetitle">Course Title:</label>
+          <input type="text" class="form-control" placeholder="Enter Course title" name="coursetitle" required [(ngModel)]="corse.coursetitle"  
+          #coursetitle="ngModel"
+          [class.is-invalid]="coursetitle.invalid && coursetitle.touched">
+          <div *ngIf="coursetitle.errors && coursetitle.invalid && coursetitle.touched">
+              <small class="text-danger" *ngIf="coursetitle.errors.required ">Course title is required</small>
+      
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="instructor">Instructor Name</label>
+            <input type="text" class="form-control" placeholder="Enter instructor name" name="instructor" required [(ngModel)]="corse.instructor" 
+            #instructor="ngModel"
+            [class.is-invalid]="instructor.invalid && instructor.touched">
+            <div *ngIf="instructor.errors && instructor.invalid && instructor.touched">
+                <small class="text-danger" *ngIf="instructor.errors.required ">instructor is required</small>
+            
+        
+              </div>
+            </div>
+            <div class="form-group">
+            <label for="coursetype">Course Type:</label>
+          <input type="text" class="form-control" placeholder="Enter Course type" name="course_type" required [(ngModel)]="corse.course_type"  
+          #course_type="ngModel"
+          [class.is-invalid]="course_type.invalid && course_type.touched">
+          <div *ngIf="course_type.errors && course_type.invalid && course_type.touched">
+              <small class="text-danger" *ngIf="course_type.errors.required ">Course type is required</small>
+      
+           
+          </div>
+            </div>
+            <div class="form-group">
+              <label for="brief">Enter Course description</label>
+              <input type="text" class="form-control" placeholder="Enter brief" name="brief" required [(ngModel)]="corse.course_brief" 
+              #brief="ngModel"
+              [class.is-invalid]="brief.invalid && brief.touched">
+              <div *ngIf="brief.errors && brief.invalid && brief.touched">
+                  <small class="text-danger" *ngIf="brief.errors.required ">Course brief is required</small>
+              
+          
+                </div>
+              </div>       
+          <button type="submit" class="btn btn-dark">Upload Course</button>
+     
+        
+        
+    </form>
+</div>
+</html>
+<!--<small style="font-size:16px; cursor:pointer;text-decoration:underline;color:cornflowerblue " class="float-right btextual" [routerLink]="['/login']">Already have an account? LOGIN</small>
+-->

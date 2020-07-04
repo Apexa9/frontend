@@ -1,94 +1,145 @@
+<!doctype html>
 <html lang="en">
-    <head>
-      <title>Bootstrap Example</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-    
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <div class="container-fluid">
-        <div class="navbar-header" style="margin: 1%;">
-          <a class="navbar-brand" href="#" style="float:left; font-size:30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Grasp It Up...!!!</a>
-        </div>
-        <form class="navbar-form navbar-left" >
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" name="search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav">
-          <li class="active"><a  [routerLink]="['/login']" class="btn btn-link" style="color:white ">Login</a></li>
-          <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>
-        </ul>
-        
-      </div>
-    </nav>
-</body>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
 
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color:#343a40;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
 
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
+	<!-- Bootstrap CSS and Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" media="all">
+
+	
+	<link rel="icon" href="assets/images/fav-icon.png">
+</head>
 
 <body>
+	<div class="page-wrapper">
 
-<div class="sidenav">
-  <br><br><br><a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
-</div>
+		<!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block" >
+			<div class="logo"style="background-color: #232324; box-shadow: #232324;">
+				<a href="home.html">
+					<img src="..\assets\logograsp.png" alt="Graspitup" class="img-responsive" style="background: #232324; box-shadow: #232324;margin-right: auto;">
+				</a>
+			</div>
+			<div class="menu-sidebar-content js-scrollbar1"style="background-color: #232324;">
+				<nav class="navbar-sidebar" style="box-shadow: #232324">
+					<ul class="list-unstyled navbar-list" >
+						<li>
+							<a href="#"style="color: white;">IT & software</a>
+						</li>
+						<li>
+							<a href="#"style="color: white;">Development</a>
+						</li>
+						<li>
+							<a href="#"style="color: white;">Business</a>
+						</li>
+						<li>
+              <a href="#"style="color: white;">Personal Development</a>
+            </li>
+            <li>
+              <a href="#"style="color: white;">Design</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<!-- END MENU SIDEBAR-->
+
+		<!-- PAGE CONTAINER-->
+		<div class="page-container">
+			<!-- HEADER DESKTOP-->
+			<header class="header-desktop" style="background-color: #232324; box-shadow: #232324; margin-left: auto;">
+				<div class="section-content section-content-p30">
+					<div class="container-fluid">
+						<div class="header-wrap">
+							<form class="form-header" onsubmit="return false;" method="GET">
+								<input class="au-input au-input-xl" type="text" name="search"
+									placeholder="Search for data ..." />
+								<button class="au-btn-submit" style="background-color:white; color:black" type="submit">
+									Search
+								</button>
+							</form>
+							<div class="cart-area d-n">
+                <nav class="navbar navbar-expand-md " style="size:50%;">
+                <ul class="nav navbar-nav" style="color:white ">
+                  
+                  <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>
+                  <li><a [routerLink]="['/login']" class="btn btn-link" style="color:white ">Login</a></li>
+                </ul>
+              </nav>
+							<!--	<a href="shopping-detail.html">
+									<div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart"
+										aria-hidden="true"></i>
+								</a>-->
+							</div>
+						</div>
+						<div class="account-wrap"></div>
+					</div>
+				</div>
+			</header>
+			<!-- END HEADER DESKTOP-->
+
+			<!-- MAIN CONTENT-->
+			<div class="main-content">
+				<div class="jumbotron" style=" background-image:url('/../assets/b.jpg');"> 
+          <div class="main">
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aNllHxZo2LE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>  
+      </div>
+
+						<div class="footer-pagination">
+							<div class="row">
+								<div class="col-md-6"></div>
+								<div class="col-md-3">
+									<div class="items">
+										<label>Item per page</label> <select>
+											<option>10</option>
+											<option>20</option>
+											<option>30</option>
+											<option>40</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="number">1 - 10 of 100</div>
+								</div>
+								<div class="col-md-1">
+									<div class="arrows">
+										<a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+										<a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+		
+
+		    <!-- END MAIN CONTENT-->
+
+		</div>
+	</div>
+
+	<!-- END PAGE CONTAINER-->
 
 
-<div class="jumbotron" style="background-image:url('../../assets/bimg.jpg');"> 
+	<footer>
+		<ul>
+			<li><a href="#">About Us</a></li>
+			<li><a [routerLink]="['/contact']">Contact Us</a></li>
+			<li><a href="#">Help</a></li>
+		</ul>
+	</footer>
 
-
-  <div class="main">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/aNllHxZo2LE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-</div>  
-</div>
 </body>
 
-<div class="container" style="background-image:url(src\assets\bgpage.jpg);"> </div>"
 </html>
+<!-- end document-->

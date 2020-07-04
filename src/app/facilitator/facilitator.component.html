@@ -44,8 +44,8 @@
                   <nav class="navbar navbar-expand-md " style="size:50%;">
                   <ul class="nav navbar-nav" style="color:white ">
                     
-                    <li><a [routerLink]="['/']" class="btn btn-link" style="color:white ">Home</a></li>
-                    <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>
+                    <li><a [routerLink]="['/']" class="btn btn-link" style="color:white ">Learner</a></li>
+                   <!-- <li><a [routerLink]="['/registration']" class="btn btn-link" style="color:white ">Register</a></li>-->
                   </ul>
                 </nav>
                 <!--	<a href="shopping-detail.html">
@@ -62,39 +62,17 @@
       </aside>
       </div>
       </body>
-<div class="container" style="padding-top: 5%; flex-wrap: wrap;flex-direction: column;width: 50%;"
->
-  <h2>User Login</h2>
-  <form #loginform="ngForm" (ngSubmit)="loginUser()">
-   <small class="text-danger">{{msg}}</small>
-  
-  
-   <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="email" class="form-control" name="email" placeholder="Please Enter email" [(ngModel)]="user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
-      #email="ngModel" 
-      [class.is-invalid]="email.invalid && email.touched"
-      >
-      <!--<small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>-->
-      <div *ngIf="email.errors && email.invalid && email.touched">
-        <small class="text-danger" *ngIf="email.errors.required ">Email is required</small>
-        <small class="text-danger" *ngIf="email.errors.pattern">invalid email</small>
+    <body>
+        
+        <div class="create-content"style="margin-top: 100px">
 
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" name="password" placeholder="Please Enter password" [(ngModel)]="user.password" required #password="ngModel"
-      
-      [class.is-invalid]="password.invalid && password.touched"
-      >
-      <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required</small>
-    
-  </div>
-
-    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-dark btn-space" >Login as learner</button>  
-    <button  [disabled]="loginform.form.invalid" type="submit"[routerLink]="['/facilitator']" class="btn btn-dark btn-space">Login as facilitator</button>
-  </form>
-</div>
-  <!--<small class="float-right" (click)="gotoregistration()">New user? register</small>-->
-  
+            <div class="instructor-dashboard--create-cta--3j5vp panel panel-default">
+                <div class="panel-body"><div class=" instructor-dashboard--create-cta--row--1cEin row">
+                    <div class="col-md-9 instructor-dashboard--cta-text--3W5Aw ">
+                        <span class="text-secondary mr30 instructor-dashboard--create-cta--icon--24gvN udi-large udi udi-instructional-design"></span>
+                        <h1 class="instructor-dashboard--cta-title--1fdTb">
+                            Jump Into Course Creation</h1></div><div class="col-md-3 col-sm-12 ">
+                                <button type="button" [routerLink]="['/createcourse']" class="instructor-dashboard--cta-button--2KwEl btn btn-lg btn-primary">Create Your Course</button>
+                            </div></div></div></div>
+        </div>
+    </body>

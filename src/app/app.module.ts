@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { FacilitatorComponent } from './facilitator/facilitator.component';
+import { CreatecourseComponent } from './createcourse/createcourse.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegistrationComponent,
     LoginsuccessComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    FacilitatorComponent,
+    CreatecourseComponent
   ],
   imports: [
     BrowserModule,
