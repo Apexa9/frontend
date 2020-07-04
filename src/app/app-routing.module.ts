@@ -16,6 +16,8 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'facilitator',component:FacilitatorComponent},
   {path:'createcourse',component:CreatecourseComponent}
+  {path:'myhomepage',component:MyhomepageComponent},
+
 ];
 
 @NgModule({
