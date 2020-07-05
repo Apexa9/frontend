@@ -15,6 +15,8 @@ import { FacilitatorComponent } from './facilitator/facilitator.component';
 import { CreatecourseComponent } from './createcourse/createcourse.component';
 import { MyhomepageComponent } from './myhomepage/myhomepage.component';
 import { AuthGuard } from './auth.guard';
+import { CoserviceService } from './services/coservice.service';
+import { EnrollcourseComponent } from './enrollcourse/enrollcourse.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { AuthGuard } from './auth.guard';
     ContactComponent,
     FacilitatorComponent,
     CreatecourseComponent,
-    MyhomepageComponent
+    MyhomepageComponent,
+    EnrollcourseComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { AuthGuard } from './auth.guard';
   ],
   providers: [
     Title,
-    AuthGuard
+    AuthGuard,
+    CoserviceService
   ],
   bootstrap: [AppComponent]
 })

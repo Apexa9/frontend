@@ -10,6 +10,7 @@ import { FacilitatorComponent } from './facilitator/facilitator.component';
 import { CreatecourseComponent } from './createcourse/createcourse.component';
 import { MyhomepageComponent } from './myhomepage/myhomepage.component';
 import { AuthGuard } from './auth.guard';
+import { EnrollcourseComponent } from './enrollcourse/enrollcourse.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'loginsuccess',canActivate:[AuthGuard],component:LoginsuccessComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'facilitator',canActivate:[AuthGuard],component:FacilitatorComponent},
   {path:'createcourse',component:CreatecourseComponent},
   {path:'myhomepage',canActivate:[AuthGuard],component:MyhomepageComponent},
+  {path: 'enrollcourse',component:EnrollcourseComponent}
 
 ];
 

@@ -1,41 +1,170 @@
+<!doctype html>
 <html lang="en">
-    <head>
-      <title>Bootstrap Example</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      
-        <style>
-            .bottom-right { 
-                  bottom: 10%; 
-                  right: 5%; 
-              } 
-        </style>
-     
-    </head>
-    <body>
-    
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Grasp It Up</a>
-        </div>
-        <form class="navbar-form navbar-left" >
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" name="search">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+	<!-- Bootstrap CSS and Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" media="all">
+
+	
+	<link rel="icon" href="assets/images/fav-icon.png">
+</head>
+
+<body>
+	<div class="page-wrapper">
+
+		<!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block" >
+			<div class="logo"style="background-color: #232324; box-shadow: #232324;">
+				<a href="home.html">
+					<img src="..\assets\logograsp.png" alt="Graspitup" class="img-responsive" style="background: #232324; box-shadow: #232324;margin-right: auto;">
+				</a>
+			</div>
+			<div class="menu-sidebar-content js-scrollbar1"style="background-color: #232324;">
+				<nav class="navbar-sidebar" style="box-shadow: #232324">
+					<ul class="list-unstyled navbar-list" >
+						<li>
+							<a href="#"style="color: white;">IT & software</a>
+						</li>
+						<li>
+							<a href="#"style="color: white;">Development</a>
+						</li>
+						<li>
+							<a href="#"style="color: white;">Business</a>
+						</li>
+						<li>
+              <a href="#"style="color: white;">Personal Development</a>
+            </li>
+            <li>
+              <a href="#"style="color: white;">Design</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<!-- END MENU SIDEBAR-->
+
+		<!-- PAGE CONTAINER-->
+		<div class="page-container">
+			<!-- HEADER DESKTOP-->
+			<header class="header-desktop" style="background-color: #232324; box-shadow: #232324; margin-left: auto;">
+				<div class="section-content section-content-p30">
+					<div class="container-fluid">
+						<div class="header-wrap">
+							<form class="form-header" onsubmit="return false;" method="GET">
+								<input class="au-input au-input-xl" type="text" name="search"
+									placeholder="Search for data ..." />
+								<button class="au-btn-submit" style="background-color:white; color:black" type="submit">
+									Search
+								</button>
+							</form>
+							<div class="cart-area d-n">
+                <nav class="navbar navbar-expand-md " style="size:50%;">
+                <ul class="nav navbar-nav" style="color:white ">
+                  
+                  <li><a [routerLink]="['/facilitator']" class="btn btn-link" style="color:white ">Facilitator</a></li>
+                 <li><a  class="btn btn-link" style="color:white " (click)="_authservice.logOutUser()" *ngIf="_authservice.loggedIn()">logout</a></li>                </ul>
+              </nav>
+							<!--	<a href="shopping-detail.html">
+									<div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart"
+										aria-hidden="true"></i>
+								</a>-->
+							</div>
+						</div>
+						<div class="account-wrap"></div>
+					</div>
+				</div>
+			</header>
+			<!-- END HEADER DESKTOP-->
+
+			<!-- MAIN CONTENT-->
+			<div class="main-content">
+        <div class="section-content section-content-p30">
+          <div class="container-fluid">
+            <div class="row" >
+<div *ngFor="let tempCourses of co" class="col-md-3" style="padding-bottom: 20px;">
+<div class="course-box">
+  <img src="{{tempCourses.image_url}}"class="img-responsive"style="height:80px;width:80px">
+  <a [routerLink]="['/enrollcourse']" class="btn btn-link" style="font-size: 20px;">{{tempCourses.coursetitle}}</a>
+  <h6>By:{{tempCourses.instructor}}</h6>
+</div>
+
+</div>
+              
+            </div>
           </div>
-          <button type="submit" class="btn btn-default" >Submit</button>
-        </form>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#" style="color:white ">Home</a></li>
-          <li><a  class="btn btn-link" style="color:white " (click)="_authservice.logOutUser()" *ngIf="_authservice.loggedIn()">logout</a></li>
+        </div>
+      
+      <!--  <div class="jumbotron" style=" background-image:url('/../assets/b.jpg');"> 
+          <div class="main">
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aNllHxZo2LE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>  
+      </div>-->
+
+						<div class="footer-pagination">
+							<div class="row">
+								<div class="col-md-6"></div>
+								<div class="col-md-3">
+									<div class="items">
+										<label>Item per page</label> <select>
+											<option>10</option>
+											<option>20</option>
+											<option>30</option>
+											<option>40</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="number">1 - 10 of 100</div>
+								</div>
+								<div class="col-md-1">
+									<div class="arrows">
+										<a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+										<a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+		
+
+		    <!-- END MAIN CONTENT-->
+
+		</div>
+	</div>
+
+	<!-- END PAGE CONTAINER-->
+
+
+	<footer>
+		<ul>
+			<li><a href="#">About Us</a></li>
+			<li><a [routerLink]="['/contact']">Contact Us</a></li>
+			<li><a href="#">Help</a></li>
+		</ul>
+	</footer>
+
+</body>
+
+</html>
+<!-- end document-->
     
-        </ul>
-        
-      </div>
-    </nav>
+      
+      
+      <!--<<p *ngFor="let tempCourses of co">
+        {{tempCourses.coursetitle}}:{{tempCourses.course_brief}}
+      </p>>-->
+    
     <div class="position-absolute bottom-right"> 
     <button type="button" class="btn btn-dark">GO TO COURSE</button>
     </div>

@@ -3,5 +3,6 @@ export class Course {
     instructor : string;
     course_type : string;
     course_brief : string;
+    
  
 }
