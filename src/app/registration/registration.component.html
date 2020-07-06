@@ -67,8 +67,8 @@
 <!--<div class="container" style="width:30%;margin-top: 6%;">-->
 <h2>Registration form</h2>
 <form #Registerform="ngForm" (ngSubmit)="registerUser()"  >
-  <small class="text-decoration" style="font-size: 16px;color: green;">{{msg}}</small>
-    <div class="form-group">
+
+  <div class="form-group">
 <!--<div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Success!</strong> This alert box could indicate a successful or positive action.
@@ -147,7 +147,10 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Remember me</label>
           </div>
-            
+          <small *ngIf="flag" class="text-decoration" style="flex-wrap: wrap; font-size: 15px;color: green;">{{msg}}</small>
+          <small *ngIf="!flag" class="text-decoration" style="flex-wrap: wrap; font-size: 20px;color:red;">{{msg}}</small>
+        
+          <br>
           <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-dark">Register</button><a  [routerLink]="['/login']" class="btn btn-link" style="color:cornflowerblue ">Login</a>
           
         

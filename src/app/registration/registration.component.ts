@@ -11,22 +11,29 @@ import {Router} from '@angular/router';
 export class RegistrationComponent implements OnInit {
 user=new User();
 msg='';
-  constructor(private _service : RegisterService,private _router : Router) { }
+
+//msg2='';
+flag:boolean;
+constructor(private _service : RegisterService,private _router : Router) { }
 
   ngOnInit() {
+
   }
 registerUser()
 {
+  
   this._service.registerUserFromRemote(this.user).subscribe(
     data=>{
       console.log("response received");
     this.msg="success";
-      this._router.navigate(['/login'])
+ this.flag=true;
+    // this._router.navigate(['/login'])
 
    this.msg="Registration Successful";
     },
     error=>{
       console.log("exception occured");
+      this.flag=false;
       this.msg="Email already exists";
       
     }
