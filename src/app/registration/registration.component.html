@@ -45,7 +45,7 @@
                   <ul class="nav navbar-nav" style="color:white ">
                     
                     <li><a [routerLink]="['/']" class="btn btn-link" style="color:white ">Home</a></li>
-                    <li><a [routerLink]="['/login']" class="btn btn-link" style="color:white ">Login</a></li>
+                 <!--  <li><a [routerLink]="['/login']" class="btn btn-link" style="color:white ">Login</a></li>-->
                   </ul>
                 </nav>
                 <!--	<a href="shopping-detail.html">
@@ -83,6 +83,31 @@
 
       </div>
     </div>
+   <div class="form-group">
+          <label for="password">password:</label>
+          <input type="password" class="form-control" name="password" placeholder="Please Enter password" [(ngModel)]="user.password" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" 
+          #password="ngModel" 
+          [class.is-invalid]="password.invalid && password.touched"
+          >
+          <!--<small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>-->
+          <div *ngIf="password.errors && password.invalid && password.touched">
+            <small class="text-danger" *ngIf="password.errors.required ">password is required</small>
+            <small class="text-danger" *ngIf="password.errors.pattern">Password must include-1. At least one upper case English letter
+              <br>2.At least one lower case English letter
+              <br>3.At least one digit
+              <br>4.At least one special character
+              <br>5.Minimum eight in length</small>          </div>
+    </div>
+          <div class="form-group">
+            <label for="cpd">Confirm Password:</label>
+            <input type="password" class="form-control" name="cpassword" placeholder="Re-enter password" (ngModel)="user.password"  required #cpassword="ngModel"
+            
+            [class.is-invalid]="cpassword.invalid && cpassword.touched"
+            > <div *ngIf="cpassword.errors && cpassword.invalid && cpassword.touched">
+              <small class="text-danger" *ngIf="cpassword.errors.required ">password confirmation is required</small></div>
+              
+            <small class="text-danger" [class.d-none]="cpassword.value == password.value || cpassword.untouched">Password does not match</small>
+          </div>
     <div class="form-group">
       <label for="firstname">First Name</label>
       <input type="text" class="form-control" placeholder="Enter First name" name="firstname" required [(ngModel)]="user.first_name" 
@@ -118,41 +143,16 @@
     
           </div>
         </div>
-        <div class="form-group">
-          <label for="password">password:</label>
-          <input type="password" class="form-control" name="password" placeholder="Please Enter password" [(ngModel)]="user.password" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" 
-          #password="ngModel" 
-          [class.is-invalid]="password.invalid && password.touched"
-          >
-          <!--<small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>-->
-          <div *ngIf="password.errors && password.invalid && password.touched">
-            <small class="text-danger" *ngIf="password.errors.required ">password is required</small>
-            <small class="text-danger" *ngIf="password.errors.pattern">Password must include-1. At least one upper case English letter
-              <br>2.At least one lower case English letter
-              <br>3.At least one digit
-              <br>4.At least one special character
-              <br>5.Minimum eight in length</small>          </div>
-    </div>
-          <div class="form-group">
-            <label for="cpd">Confirm Password:</label>
-            <input type="password" class="form-control" name="cpassword" placeholder="Re-enter password" (ngModel)="user.password"  required #cpassword="ngModel"
-            
-            [class.is-invalid]="cpassword.invalid && cpassword.touched"
-            > <div *ngIf="cpassword.errors && cpassword.invalid && cpassword.touched">
-              <small class="text-danger" *ngIf="cpassword.errors.required ">password confirmation is required</small></div>
-              
-            <small class="text-danger" [class.d-none]="cpassword.value == password.value || cpassword.untouched">Password does not match</small>
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Remember me</label>
-          </div>
-          <small *ngIf="flag" class="text-decoration" style="flex-wrap: wrap; font-size: 15px;color: green;">{{msg}}</small>
-          <small *ngIf="!flag" class="text-decoration" style="flex-wrap: wrap; font-size: 20px;color:red;">{{msg}}</small>
-        
-          <br>
-          <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-dark">Register</button><a  [routerLink]="['/login']" class="btn btn-link" style="color:cornflowerblue ">Login</a>
+       
           
+          <small *ngIf="flag" class="text-decoration" style="flex-wrap: wrap; font-size: 18px;color: green;">{{msg}}</small>
+          <small *ngIf="!flag" class="text-decoration" style="flex-wrap: wrap; font-size: 18px;color:red;">{{msg}}</small>
+        <br>
+          <br>
+        <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-dark btn-space" style="margin: 5px;">Register</button>
+          <button [disabled]="Registerform.form.invalid" [routerLink]="['/login']" class="btn btn-link btn-dark btn-space" style="color:white ">Login</button>
+          
+
         
 </form>
 <!--<small style="font-size:16px; cursor:pointer;text-decoration:underline;color:cornflowerblue " class="float-right btextual" [routerLink]="['/login']">Already have an account? LOGIN</small>
